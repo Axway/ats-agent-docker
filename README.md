@@ -4,7 +4,7 @@ Project for creating a Docker image with deployed ATS Agent
 
 **Documentaion** will be available at https://axway.github.io/ats-framework/
 
-**Download** location at TODO: https://hub.docker.com/r/axway/ats-agent-docker
+**Image** location at https://hub.docker.com/r/axway/ats-agent
 
 **Configuration details**:
 <ul>
