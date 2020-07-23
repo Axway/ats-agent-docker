@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# set -x
+#ATS_USER_HOME=/home/atsuser
+
+# AGENT_HOME - from Dockerfile: USER_HOME/ats-agent
+AGENT_VERSION="4.0.7-SNAPSHOT"
+AGENT_DOWNLOAD_LOCATION="https://oss.sonatype.org/content/groups/public/com/axway/ats/framework/agent/standalone/ats-agent-standalone-all/$AGENT_VERSION/"
+AGENT_METADATA=$AGENT_VERSION
+
+wget -O agent-maven-metadata.xml $AGENT_DOWNLOAD_LOCATION/maven-metadata.xml
+if [ -s "agent-maven-metadata.xml" ];
+then
+    AGENT_METADATA=`cat agent-maven-metadata.xml | grep 'value' | uniq | xargs | awk '{n=split($0,a,">"); print a[n-1]}' | awk '{n=split($0,a,"<"); print a[1]}'`
+    rm agent-maven-metadata.xml
+fi
+
+
+if [ ! -d "$AGENT_HOME" ];
+then
+    mkdir $AGENT_HOME
+fi
+cd $AGENT_HOME
+
+echo  "Calculated download destination: $AGENT_DOWNLOAD_LOCATION/ats-agent-standalone-all-$AGENT_METADATA.zip"
+wget  "$AGENT_DOWNLOAD_LOCATION/ats-agent-standalone-all-$AGENT_METADATA.zip"
+unzip ats-agent-standalone-all-$AGENT_METADATA.zip
+rm    ats-agent-standalone-all-$AGENT_METADATA.zip
+
+# do not ask for password, when user 'atsuser' executes sudo
+# echo "$USERNAME ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/dont-prompt-atsuser-for-password
+
