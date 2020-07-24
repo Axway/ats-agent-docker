@@ -12,7 +12,7 @@ RUN apt-get -y update && apt-get install -y unzip wget --no-install-recommends &
 # Direct alternative: curl http://ftp.bg.debian.org/debian/pool/main/u/unzip/unzip_6.0-23+deb10u1_amd64.deb && apt install ...
 # RUN apt-get update && apt-get -y install wget zip sudo unzip postgresql-client openjdk-8-jre-headless
 
-ENV AGENT_HOME=$WORKDIR/ats-agent
+ENV AGENT_HOME=$WORKDIR/
 ENV LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8
 ENV AGENT_ZIP=ats-agent-standalone-all.zip
 
@@ -20,6 +20,7 @@ ENV AGENT_ZIP=ats-agent-standalone-all.zip
 RUN mkdir -p ${AGENT_HOME} && chmod 770 -R ${AGENT_HOME} &&\
     useradd -d ${AGENT_HOME} -M -u 10001 -g 0 -s /usr/sbin/nologin $USERNAME
 
+# For local agent build:
 #COPY resources/ats-agent-standalone-all*.zip ./$AGENT_ZIP
 #RUN ls -la && unzip $AGENT_ZIP && rm $AGENT_ZIP && ls -la
 
@@ -41,4 +42,4 @@ EXPOSE 8089
 
 #RUN echo "Work dir before entrypoint: `pwd`"
 
-ENTRYPOINT ["/bin/bash", "-c", "cd $AGENT_HOME && pwd && ../entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "-c", "cd $AGENT_HOME && pwd && ./entrypoint.sh"]
