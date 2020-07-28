@@ -8,7 +8,7 @@ Project for creating a Docker image with deployed ATS Agent
 
 **Configuration details**:
 <ul>
-  <li>Default port 8089 should be exposed to a suitable port</li>
+  <li>Default port 8089 should be exposed to a suitable port;</li>
 </ul>
 
 Other **related projects**:
@@ -20,5 +20,5 @@ Other **related projects**:
 </ul>
 
 
-**Contact** ATS team at: _ats.team_  _@axway.com_
+**Contact** ATS team at: _ats.team_  _@_ _axway.com_
 
