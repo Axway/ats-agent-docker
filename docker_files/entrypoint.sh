@@ -14,6 +14,7 @@ if [[ -d ${MOUNT}/actions/ ]]; then
      echo "Found custom actions dependencies to be copied: $(ls -R ${MOUNT}/actions_dependencies/)"
      cp -R ${MOUNT}/actions_dependencies/* ${ATS_AGENT}/actions_dependencies/
   fi
+  chown -R $USERNAME:0 ${ATS_AGENT}/actions/ ${ATS_AGENT}/actions_dependencies/
 else
   echo "Not found folder with additional actions in ${MOUNT}/actions/"
 fi
