@@ -23,7 +23,7 @@ echo "Listing of agent folder "
 ls -lRa
 
 if [[ -f ./agent.sh ]]; then
-    echo "Starting Agent with parameters: conainer $@"
+    echo "Starting Agent with parameters: container $@"
     ./agent.sh container "$@"
 else
     echo "Not found agent.sh script in directory $(pwd)"
