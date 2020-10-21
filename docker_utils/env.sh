@@ -1,0 +1,2 @@
+IMAGE_NAME=ats-agent
+DOCKERFILE_LOCATION="../"
