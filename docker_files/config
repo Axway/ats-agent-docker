@@ -4,7 +4,7 @@
 #ATS_USER_HOME=/home/atsuser
 
 # AGENT_HOME - from Dockerfile: $USER_HOME
-AGENT_VERSION="4.0.7-jre11-SNAPSHOT"
+AGENT_VERSION="4.0.7-SNAPSHOT"
 AGENT_DOWNLOAD_LOCATION="https://oss.sonatype.org/content/groups/public/com/axway/ats/framework/agent/standalone/ats-agent-standalone-all/$AGENT_VERSION/"
 AGENT_METADATA=$AGENT_VERSION
 
