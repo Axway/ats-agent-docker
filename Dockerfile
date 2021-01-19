@@ -1,7 +1,7 @@
-FROM adoptopenjdk/openjdk11:x86_64-debianslim-jre-11.0.8_10
+FROM adoptopenjdk/openjdk11:x86_64-debianslim-jre-11.0.9_11
 LABEL maintainer="ats.team__@__axway.com"\
     product="Axway ATS Agent"\
-    version="4.0.7-SNAPSHOT"
+    version="4.0.7"
 
 ARG USERNAME=atsuser
 ARG WORKDIR=/home/$USERNAME
@@ -16,7 +16,7 @@ RUN apt-get -y update && apt-get install -y unzip wget --no-install-recommends &
 # RUN apt-get update && apt-get -y install wget zip sudo unzip postgresql-client openjdk-8-jre-headless
 
 ENV JAVA_HOME=/opt/java/openjdk AGENT_HOME=$WORKDIR/ AGENT_ZIP=ats-agent-standalone-all.zip
-ENV LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8
+ENV LC_ALL='en_US.UTF-8' LANG='en_US.UTF-8' LANGUAGE='en_US.UTF-8'
 
 # Create folders, which will contain ATS Agent installation and optimize security configuration
 RUN mkdir -p ${AGENT_HOME} && chmod 770 -R ${AGENT_HOME} &&\

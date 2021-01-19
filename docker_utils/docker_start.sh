@@ -2,4 +2,6 @@
 
 . ./env.sh
 
-docker run -td -p 8089:8089 --name $CONTAINER_NAME $IMAGE_NAME
+docker run -td -p 8089:8089 --name $CONTAINER_NAME \
+  --mount type=bind,source=$(pwd)/../resources/add_actions,target=/opt/mount/ats \
+  $IMAGE_NAME

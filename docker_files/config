@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-# set -x
+set -x
 #ATS_USER_HOME=/home/atsuser
 
 # AGENT_HOME - from Dockerfile: $USER_HOME
-AGENT_VERSION="4.0.7-SNAPSHOT"
-AGENT_DOWNLOAD_LOCATION="https://oss.sonatype.org/content/groups/public/com/axway/ats/framework/agent/standalone/ats-agent-standalone-all/$AGENT_VERSION/"
+AGENT_VERSION="4.0.7"
+AGENT_DOWNLOAD_LOCATION="https://oss.sonatype.org/content/groups/public/com/axway/ats/framework/agent/standalone/ats-agent-standalone-all/$AGENT_VERSION"
 AGENT_METADATA=$AGENT_VERSION
 
 wget -O agent-maven-metadata.xml $AGENT_DOWNLOAD_LOCATION/maven-metadata.xml

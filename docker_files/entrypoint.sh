@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# script debug mode
+# set -x
 MOUNT=/opt/mount/ats
 ATS_AGENT=/home/atsuser/ats-agent
 echo "Start of entrypoint"
