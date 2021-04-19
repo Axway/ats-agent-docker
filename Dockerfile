@@ -5,7 +5,7 @@ LABEL maintainer="ats.team__@__axway.com"\
 
 ARG USERNAME=atsuser
 ARG WORKDIR=/home/$USERNAME
-ARG AGENT_VERSION="4.0.8-SNAPSHOT"
+ARG AGENT_VERSION="4.0.8"
 
 USER root
 
