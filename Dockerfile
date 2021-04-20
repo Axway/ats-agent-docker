@@ -1,11 +1,11 @@
 FROM adoptopenjdk/openjdk11:x86_64-debianslim-jre-11.0.10_9
 LABEL maintainer="ats.team__@__axway.com"\
     product="Axway ATS Agent"\
-    version="4.0.8"
+    version="4.0.9-SNAPSHOT"
 
 ARG USERNAME=atsuser
 ARG WORKDIR=/home/$USERNAME
-ARG AGENT_VERSION="4.0.8"
+ARG AGENT_VERSION="4.0.9-SNAPSHOT"
 
 USER root
 
